@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@1,900&display=swap');
+
+body{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.card-img-top{
+    width: 190px;
+    height: 270px;
+    transition: 0.5s;
+}
+.card-img-top:hover{
+    transform: scale(1.25);
+    transition: 0.5s;
+}
+.navbar{
+    position:fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+.p2,.p3{
+    margin-top: 100px;
+}
