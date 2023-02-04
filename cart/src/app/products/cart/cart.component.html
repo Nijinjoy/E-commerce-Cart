@@ -59,19 +59,32 @@
         </div>
         <div class="modal-body">
         <h2>  Delivery Address</h2>
-        <form action="" class="form-control">
-        <input type="text" placeholder="Name">
-        <input type="text" placeholder="Address/House No">
-        <input type="text" placeholder="PinCode">
-        <input type="text" placeholder="State">
-        <input type="text" placeholder="Country">
-        <input type="text" placeholder="Contact Number">
-        <input type="text" placeholder="E-mail Address">
+        <form action="" class="form-control p-3 m-3 border border-primary">
+        <input class="form-control" type="text" placeholder="Name"><br>
+        <input class="form-control"  type="text" placeholder="Address/House No"><br>
+        <input class="form-control"  type="text" placeholder="PinCode"><br>
+        <input class="form-control"  type="text" placeholder="State"><br>
+        <input class="form-control"  type="text" placeholder="Country"><br>
+        <input class="form-control"  type="text" placeholder="Contact Number"><br>
+        <input  class="form-control" type="text" placeholder="E-mail Address"><br>
         </form>
+        <div [ngSwitch]="grand">
+            <h4>Discount</h4>
+            <img *ngSwitchCase="3" (click)="discount3per($event.target)" src="https://t4.ftcdn.net/jpg/00/98/97/57/360_F_98975745_sgSVAhoA5L8DgfEgoamIEZcKh0J6aBNI.jpg" width="100px" alt="">
+            <img *ngSwitchCase="10" (click)="discount10per()" src="https://spng.pngfind.com/pngs/s/26-269721_discount-png-image-discount-png-transparent-png.png" width="100px" alt="">
+            <img *ngSwitchCase="30" (click)="discount30per()" src="https://cdn2.vectorstock.com/i/1000x1000/97/06/50-off-special-offer-sale-discount-banner-vector-22509706.jpg" width="100px" alt="">
+            <img *ngSwitchCase="50" (click)="discount50per()" src="https://cdn5.vectorstock.com/i/1000x1000/96/29/discount-up-to-30-off-special-offer-logo-template-vector-33699629.jpg" width="100px" alt="">
+            <img *ngSwitchDefault="3" (click)="discount3per($event.target)" src ="https://thumbs.dreamstime.com/b/promo-code-blue-price-tag-blue-label-vector-illustration-promo-code-blue-price-tag-blue-label-vector-illustration-208948370.jpg" width="100px" alt="">
+        </div>
+
+<div>
+    <h5>Your Grand Total is here:{{updatetotal}}</h5>
+</div>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="proceed()">Proceed</button>
         </div>
       </div>
     </div>
